@@ -61,6 +61,7 @@ export InferenceAlgorithm,
     MH,
     ESS,
     Emcee,
+    GibbsLoop,
     Gibbs,      # classic sampling
     HMC,
     SGLD,
@@ -584,6 +585,7 @@ include("hmc.jl")
 include("mh.jl")
 include("is.jl")
 include("particle_mcmc.jl")
+include("gibbsLoop.jl")
 include("gibbs.jl")
 include("sghmc.jl")
 include("emcee.jl")
