@@ -83,7 +83,7 @@ function GibbsLoop(alg1::InferenceAlgorithm, other_algs::InferenceAlgorithm...)
     return Gibbs(varnames, map(set_selector ∘ drop_space, algs))
 end
 
-function Gibbs(
+function GibbsLoop(
     alg_with_iters1::Tuple{<:InferenceAlgorithm,Int},
     other_algs_with_iters::Tuple{<:InferenceAlgorithm,Int}...,
 )
@@ -95,7 +95,7 @@ function Gibbs(
     ))
     # This calls the other deprecated constructor from above, hence no need for a depwarn
     # here.
-    return Gibbs(algs_duplicated...)
+    return GibbsLoop(algs_duplicated...)
 end
 
 # TODO: Remove when no longer needed.

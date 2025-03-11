@@ -87,6 +87,7 @@ export @model,                 # modelling
     Emcee,
     ESS,
     Gibbs,
+    GibbsLoop,
     HMC,                    # Hamiltonian-like sampling
     SGLD,
     SGHMC,
