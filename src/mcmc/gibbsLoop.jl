@@ -200,7 +200,7 @@ function gibbs_initialstep_loop(
 
     # varnames, varname_vecs_tail... = varname_vecs
     # sampler, samplers_tail... = samplers
-    for varnames, sampler in zip(varname_vecs, samplers)
+    for (varnames, sampler) in zip(varname_vecs, samplers)
         # Get the initial values for this component sampler.
         initial_params_local = if initial_params === nothing
             nothing
@@ -432,7 +432,7 @@ function gibbs_step_loop(
     # sampler, samplers_tail... = samplers
     # state, states_tail... = states
 
-    for varnames, sampler, state in zip(varname_vecs, samplers, states)
+    for (varnames, sampler, state) in zip(varname_vecs, samplers, states)
 
         # Construct the conditional model and the varinfo that this sampler should use.
         conditioned_model, context = make_conditional(model, varnames, global_vi)
