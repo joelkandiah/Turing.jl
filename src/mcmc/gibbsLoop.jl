@@ -1,6 +1,6 @@
 
 """
-    Gibbs
+    GibbsLoop
 
 A type representing a Gibbs sampler.
 
@@ -14,13 +14,13 @@ Each variable name can be given as either a `Symbol` or a `VarName`.
 
 Some examples of valid constructors are:
 ```julia
-Gibbs(:x => NUTS(), :y => MH())
-Gibbs(@varname(x) => NUTS(), @varname(y) => MH())
-Gibbs((@varname(x), :y) => NUTS(), :z => MH())
+GibbsLoop(:x => NUTS(), :y => MH())
+GibbsLoop(@varname(x) => NUTS(), @varname(y) => MH())
+GibbsLoop((@varname(x), :y) => NUTS(), :z => MH())
 ```
 
 Currently only variable names without indexing are supported, so for instance
-`Gibbs(@varname(x[1]) => NUTS())` does not work. This will hopefully change in the future.
+`GibbsLoop(@varname(x[1]) => NUTS())` does not work. This will hopefully change in the future.
 
 # Fields
 $(TYPEDFIELDS)
